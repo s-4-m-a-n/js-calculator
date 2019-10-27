@@ -1,0 +1,275 @@
+*{
+  position : static;
+  top :0;
+  left:0;
+  box-sizing : border-box;
+  margin:0;
+  padding : 0;
+}
+body {
+
+  background-image: linear-gradient(to right top, #040639, #003f81, #0077a6, #00ae91, #09e04a);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height : 200vh;
+  width : 200vw;
+  overflow: hidden;
+}
+
+
+.swipe-mode{
+  position : absolute;
+  top:10vh;
+  left :15vw;
+
+}
+
+input[data-name='advanced-calculator']{
+  position: relative;
+  width:7vw;
+  height:3vw;
+ -webkit-appearance : none;
+ background: rgba(119, 118, 115, 0.66);
+ border-radius: 2.5vw;
+ box-shadow: inset 0 0 10px rgba(10, 10, 10, 0.73);
+
+}
+
+input[data-name='advanced-calculator']:checked{
+     background-color: rgba(238, 250, 14, 0.82);
+
+}
+
+input[data-name='advanced-calculator']::before{
+    position: absolute;
+    top:0;
+    left:0;
+    content:'';
+    height:inherit;
+    width:3.5vw;
+    border-radius: 2vw;
+    background-color: white ;
+    box-shadow: 5px 0px 5px rgba(10, 10, 10, 0.41);
+    transform: scale(1.1);
+    transition: .2s;
+}
+
+input:checked[data-name='advanced-calculator']::before{
+   left : 3.5vw;
+}
+
+
+
+
+
+
+
+ .calculator {
+
+  background-color: rgba(6, 22, 48,0.7);
+  margin-top: 9vh;
+  margin-left: 35vw;
+  width : 30vw;
+  height : 87vh;
+  box-shadow: 0px 0px 10px rgba(230, 235, 230, 0.95);
+  border : 2px solid rgba(6, 22, 48,0.02);
+
+}
+.calculator > .display > input{
+  box-shadow: 0 0 10px black;
+  cursor:  no-drop;
+  padding-left: 10px;
+}
+
+.calculator > .display > #result {
+  width : 87%;
+  height : 4vw;
+  margin-left: 2vw;
+  margin-top:2vh;
+  background-color: rgb(163, 236, 9);
+  border  : 2px solid rgba(2, 38, 19, 0.13);
+  /*direction: rtl;*/
+
+  padding-right : 15px;
+  font-size: 20px;
+}
+
+
+.calculator > .display > #screen{
+  width : 87%;
+  height : 6vw;
+  margin-left: 2vw;
+  background-color: rgb(163, 236, 9);
+  border  : 2px solid rgba(2, 38, 19, 0.13);
+/*  direction: rtl; */
+
+
+  padding-right : 1.5vw;
+  font-size: 30px;
+}
+
+
+
+.calculator > .keys {
+  display: grid;
+  grid-template-areas: '. . . .'
+                       '. . . .'
+                       '. . . .'
+                       '. . . eqls'
+                       'zero zero . eqls';
+  grid-gap: 0.25vw;
+  text-align: center;
+  margin :2vw;
+  font-size: 15px;
+}
+.calculator > .keys > .key {
+  border : 1px solid rgb(159, 156, 159);
+  padding : 3.9vh 1.8vw ;
+  color: rgba(164, 161, 163, 1);
+  cursor: pointer;
+  box-shadow: 0px 0px 20px rgba(4, 4, 4, 0.75);
+}
+
+
+
+
+.calculator > .keys > #eqls{
+  grid-area: eqls;
+  padding-top : 6vw;
+
+}
+.calculator > .keys > #zero{
+  grid-area: zero;
+}
+
+.calculator > .keys > .key:hover{
+  background-color: rgba(9, 209, 236,0.1);
+}
+
+
+@media  screen and (max-width : 930px){
+   .calculator > .keys {
+       font-size : 1.5vw;
+   }
+
+  .calculator > .display > #screen {
+    font-size  : 2.5vw;
+  }
+
+  .calculator > .display > #result {
+    font-size : 2vw;
+  }
+
+
+  .calculator > .keys > .key {
+    padding: 2vw;
+  }
+
+  .calculator {
+    width : 32vw;
+    height : 46vw;
+  }
+
+}
+
+
+/*
+@media  screen and (max-height : 600px ){
+   .calculator > .keys {
+       font-size : 1.5vw;
+   }
+
+  .calculator > .display > #screen {
+    font-size  : 2.5vh;
+  }
+
+  .calculator > .display > #result {
+    font-size : 2vh;
+  }
+
+
+  .calculator > .keys > .key {
+    padding: 2vh;
+
+  }
+
+  .calculator {
+    width : 60vh;
+    height : 80vh;
+  }
+
+}
+*/
+
+@media  screen and (max-height:600px ){
+  .calculator > .keys {
+      font-size : 19px;
+  }
+
+  .calculator > .display > #screen {
+   font-size  : 15px;
+   width : 255px;
+   height :40px;
+
+  }
+
+  .calculator > .display > #result {
+   font-size : 10px;
+   width : 255px;
+   height :35px;
+  }
+  .calculator > .keys > .key {
+   padding: 15px;
+   font-size: 17px;
+  }
+  .calculator > .keys {
+   width : 200px;
+   height: 200px;
+   padding : 10px;
+
+    grid-gap: 4px;
+  }
+
+  .calculator {
+   width : 290px;
+   height : 400px;
+   grid-gap: 10px;
+  }
+
+  }
+
+
+@media  screen and ( max-width : 700px){
+  .calculator > .keys {
+      font-size : 19px;
+  }
+
+ .calculator > .display > #screen {
+   font-size  : 15px;
+   width : 255px;
+   height :40px;
+ }
+
+ .calculator > .display > #result {
+   font-size : 10px;
+   width : 255px;
+   height :35px;
+ }
+
+ .calculator > .keys > .key {
+   padding: 15px;
+   font-size: 17px;
+ }
+ .calculator > .keys {
+   width : 200px;
+   height: 200px;
+   padding : 10px;
+   grid-gap: 4px;
+ }
+
+ .calculator {
+   width : 290px;
+   height : 400px;
+ }
+
+}
